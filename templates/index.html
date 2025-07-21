@@ -10,14 +10,22 @@
     <button>Rules</button>
     <h1>Welcome to the Inceasing<br>Sequence Game!</h1>
     <form action="/check" method="POST">
-        <label for="number">Enter a positive, whole number:</label><br>
+        <label for="number">Enter A Positive, Whole Number:</label><br>
         <input type="text" name="number" id="number" required><br><br>
 
-        <label for="piece_length">How many digits per piece:</label><br>
+        <label for="piece_length">How Many Digits Per Piece:</label><br>
         <input type="text" name="piece_length" id="piece_length" required><br><br>
 
         <input type="submit" value="Check Sequence">
     </form>
+
+    <script>
+        document.getElementById('rules').addEventListener('click', () => {
+        window.location.href = 'rules.html'; // Redirect to rules details page
+        });
+
+    </script>
+        
 </body>
 
 </html>

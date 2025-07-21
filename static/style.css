@@ -70,3 +70,13 @@ button {
     cursor: pointer;
     align-items: flex-end;
 }
+
+button:hover, input[type="submit"]:hover{
+    background-color: rgb(128, 0, 128);
+    color: white;
+
+}
+
+button {
+    position: absolute
+}
