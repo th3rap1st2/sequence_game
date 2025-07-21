@@ -5,13 +5,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
+
 <body>
+    <button>Rules</button>
     <h1>Welcome to the Inceasing<br>Sequence Game!</h1>
     <form action="/check" method="POST">
         <label for="number">Enter a positive, whole number:</label><br>
         <input type="text" name="number" id="number" required><br><br>
 
-        <label for="piece_length">How many digits per piece?</label><br>
+        <label for="piece_length">How many digits per piece:</label><br>
         <input type="text" name="piece_length" id="piece_length" required><br><br>
 
         <input type="submit" value="Check Sequence">
