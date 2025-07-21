@@ -1,30 +1,10 @@
-def get_whole_number() -> str:
-    while True:
-        try:
-            number = input("Enter a whole number: ")
+from flask import Flask, render_template, request, jsonify
 
-            if number.isdigit() and int(number) > 0:
-                return number
-            else:
-                print("Invalid input! Please enter a positive whole number.")
+app = Flask(__name__)
 
-        except ValueError:
-            print("Invalid input! Please enter a positive whole number.")
+inc_score = 0
+dec_score = 0
 
-
-def get_pieces(number) -> str:
-    while True:
-
-        try:
-            pieces = input("Enter the number of digits in each piece: ")
-
-            if int(pieces) > 0 and len(number) % int(pieces) == 0:
-                return pieces
-            else:
-                print(f"Invalid input! The piece length must be a divisor of the length of {number}")
-
-        except ValueError:
-            print(f"Invalid input! The piece length must be a divisor of the length of {number}")
 
 
 def check_sequence(number, piece_length):
@@ -33,9 +13,6 @@ def check_sequence(number, piece_length):
     while i < len(number):
         new_list.append(number[i: piece_length + i])
         i = piece_length + i
-
-    increasing_sequence(new_list)
-    decreasing_sequence(new_list)
 
     return new_list
 
@@ -67,34 +44,44 @@ def decreasing_sequence(sequence):
 
     return True
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-def main():
-    print("Welcome to the Number Sequence Game!\n"
-          "------------------------------------\n")
+@app.route('/check', methods=['POST'])
 
-    inc_score = 0
-    dec_score = 0
+def check():
+    global inc_score, dec_score
 
-    while inc_score != 5:
-        number = get_whole_number()
-        pieces = get_pieces(number)
-        sequence = check_sequence(number, int(pieces))
-        new_s = ', '.join(sequence)
-        print(f"Pieces: {new_s}")
+    number = request.form.get('number')
+    pieces = request.form.get('piece_length')
 
-        if increasing_sequence(sequence):
-            print("The pieces are in numerically increasing order!")
-            inc_score += 1
-        else:
-            if decreasing_sequence(sequence):
-                dec_score += 1
-            print("The pieces are not in numerically increasing order.")
+    if not number or not number.isdigit() or int(number) <= 0:
+        return jsonify({"error": "Invalid input. Please enter a positive whole number."})
 
-        print(f"Numerically Increasing Sequences: {inc_score}")
-        print(f"Numerically Decreasing Sequences: {dec_score}\n")
+    if not pieces or not pieces.isdigit() or int(pieces) <= 0 or len(number) % pieces != 0:
+        return jsonify({"error": f"Invalid input. Make sure piece length is a divisor of {number}."})
+    
+    pieces = int(pieces)
+    sequence = check_sequence(number, int(pieces))
 
-    print("\nCongratulations! You've reached 5 numerically increasing sequences. You won!")
 
+    if increasing_sequence(sequence):
+        result = "increasing"
+        inc_score += 1
+    elif decreasing_sequence(sequence):
+        result = "decreasing"
+        dec_score += 1
+    else:
+        result = "neutral"
+
+    return jsonify({
+    "pieces": sequence,
+    "order": result,
+    "increasingScore": inc_score,
+    "decreasingScore": dec_score
+    })
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)
+
