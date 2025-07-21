@@ -48,6 +48,10 @@ def decreasing_sequence(sequence):
 def index():
     return render_template('index.html')
 
+@app.route('/rules')
+def rules():
+    return render_template('rules.html')
+
 @app.route('/check', methods=['POST'])
 
 def check():
