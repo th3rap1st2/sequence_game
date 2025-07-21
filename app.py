@@ -59,11 +59,14 @@ def check():
     if not number or not number.isdigit() or int(number) <= 0:
         return jsonify({"error": "Invalid input. Please enter a positive whole number."})
 
-    if not pieces or not pieces.isdigit() or int(pieces) <= 0 or len(number) % pieces != 0:
-        return jsonify({"error": f"Invalid input. Make sure piece length is a divisor of {number}."})
+    try:
+        pieces = int(pieces)
+        if pieces <= 0 or len(number) % pieces != 0:
+            raise ValueError
+    except ValueError:
+        return jsonify({"error": f"Invalid input. Make sure piece length is a divisor of {len(number)}."})
     
-    pieces = int(pieces)
-    sequence = check_sequence(number, int(pieces))
+    sequence = check_sequence(number, pieces)
 
 
     if increasing_sequence(sequence):
