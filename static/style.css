@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    background-color: rgb(167, 153, 207);
+    background-color: #a799cf;
+    /* background-image: url("/static/images/physics-background.png"); */
 }
 
 
@@ -34,6 +35,8 @@ input[type="submit"] {
     color: thistle;
     align-items: center;
     border-color: rgb(42, 6, 42);
+    
+
 }
 
 label[for="number"],
@@ -79,4 +82,8 @@ button:hover, input[type="submit"]:hover{
 
 button {
     position: absolute
+}
+
+button, h1, label[for="number"] {
+    gap: 1rem;
 }

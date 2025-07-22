@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #a799cf;
+}
+
+h1 {
+    font-family: "Bitcount Grid Double", sans-serif;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 80px;
+}
