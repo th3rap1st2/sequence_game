@@ -11,16 +11,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 4px;
 }
 
-h1, h2 {
+h1 {
     font-family: "Bitcount Grid Double", sans-serif;
     font-weight: 550;
     color: white;
     text-align: center;
     cursor: pointer;
     font-size: 60px;
-    gap: 0.5rem;
+    margin-bottom: 20px;
 }
 
 body {
@@ -43,7 +44,7 @@ input[type="submit"] {
     cursor: pointer;
 } 
 
-.bt1 {
+.submit-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,13 +84,18 @@ input[type="text"] {
     border-color: rgb(42, 6, 42);
     cursor: pointer;
     align-items: flex-end;
-    position: static;
-    margin-top: static;
+    margin-top: 10px;
+    margin: 0;
+    margin-bottom: 15px;
 }
 
 .rules-button:hover, input[type="submit"]:hover{
     background-color: rgb(128, 0, 128);
     color: white;
+    transform: translateY(-2px); 
+    /* moves the button 2 pixels up */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* creates a shadow under the button */
 
 }
 
