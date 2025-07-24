@@ -7,9 +7,10 @@
 
 
 <body>
-    <button id="rules-button">Rules</button><br>
-
-    <h1>Welcome to the Inceasing<br>Sequence Game!</h1>
+    <div class="head-container">
+        <button id="rules-button" class="rules-button">Rules</button><br>
+        <h1>Welcome to the Inceasing<br>Sequence Game!</h1>
+    </div>
 
     <form action="/check" method="POST">
         <br><label for="number">Enter A Positive, Whole Number:</label><br>
@@ -21,12 +22,14 @@
         </div>
     </form>
 
+    </body>
+
     <script>
     document.getElementById('rules-button').addEventListener('click', () => {
         window.location.href = '/rules'; // Redirect to rules details page
         });
     </script>
         
-</body>
+
 
 </html>

@@ -6,6 +6,9 @@ body {
     /* background-image: url("/static/images/physics-background.png"); */
 }
 
+h1 {
+    margin-top: 40px;
+}
 
 h1, h2 {
     font-family: "Bitcount Grid Double", sans-serif;
@@ -65,7 +68,7 @@ input[type="text"] {
     border-color: rgb(64, 23, 64);
 }
 
-button {
+.rules-button {
     background-color: purple;
     border-radius: 10px;
     width: 100px;
@@ -79,16 +82,13 @@ button {
     align-items: flex-end;
 }
 
-button:hover, input[type="submit"]:hover{
+.rules-button:hover, input[type="submit"]:hover{
     background-color: rgb(128, 0, 128);
     color: white;
 
 }
 
-button {
-    position: absolute
-}
 
-button, h1, label[for="number"] {
+.rules-button, h1, label[for="number"] {
     gap: 1rem;
 }
