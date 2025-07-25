@@ -82,12 +82,12 @@ def check():
     else:
         result = "neutral"
 
-    return jsonify({
-    "pieces": sequence,
-    "order": result,
-    "increasingScore": inc_score,
-    "decreasingScore": dec_score
-    })
+    return render_template("results.html", 
+        pieces=sequence,
+        order=result,
+        inc_score=inc_score,
+        dec_score=dec_score
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)
