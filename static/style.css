@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body {
     background-color: #a799cf;
     /* background-image: url("/static/images/physics-background.png"); */
@@ -24,6 +31,20 @@ h1 {
     margin-bottom: 20px;
 }
 
+h1, label[for="number"],
+label[for="piece_length"]  {
+  text-shadow:
+    -1px -1px 0 rgb(42, 6, 42),
+     0   -1px 0 rgb(42, 6, 42),
+     1px -1px 0 rgb(42, 6, 42),
+     1px  0   0 rgb(42, 6, 42),
+     1px  1px 0 rgb(42, 6, 42),
+     0    1px 0 rgb(42, 6, 42),
+    -1px  1px 0 rgb(42, 6, 42),
+    -1px  0   0 rgb(42, 6, 42);
+}
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -35,8 +56,8 @@ body {
 input[type="submit"] {
     background-color: purple;
     border-radius: 10px;
-    width: 200px;
-    height: 50px;
+    width: 220px;
+    height: 40px;
     font-size: 20px;
     font-family: "Bitcount Grid Double", sans-serif;
     color: thistle;
@@ -49,6 +70,7 @@ input[type="submit"] {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    letter-spacing: 1px;
 }
 
 label[for="number"],
@@ -76,7 +98,7 @@ input[type="text"] {
     background-color: purple;
     border-radius: 10px;
     width: 100px;
-    height: 25px;
+    height: 27px;
     font-size: 17.5px;
     font-family: "Bitcount Grid Double", sans-serif;
     color: thistle;
@@ -87,6 +109,7 @@ input[type="text"] {
     margin-top: 10px;
     margin: 0;
     margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 .rules-button:hover, input[type="submit"]:hover{
