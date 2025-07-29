@@ -44,6 +44,10 @@ def decreasing_sequence(sequence):
 
     return True
 
+@app.route('/error')
+def error():
+    return render_template('error.html')
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -61,14 +65,14 @@ def check():
     pieces = request.form.get('piece_length')
 
     if not number or not number.isdigit() or int(number) <= 0:
-        return jsonify({"error": "Invalid input. Please enter a positive whole number."})
+        return render_template("error.html")
 
     try:
         pieces = int(pieces)
         if pieces <= 0 or len(number) % pieces != 0:
             raise ValueError
     except ValueError:
-        return jsonify({"error": f"Invalid input. Make sure piece length is a divisor of {len(number)}."})
+        return render_template("error.html")
     
     sequence = check_sequence(number, pieces)
 
