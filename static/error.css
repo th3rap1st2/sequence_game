@@ -12,11 +12,11 @@
 } 
 
 body {
-    background-color: #583f9e;
+    background-color: rgb(61, 33, 75);
 }
 
 h1 {
-    font-family: "Bitcount Grid Double", sans-serif;
+    font-family: Impact, sans-serif;
     font-weight: 550;
     color: white;
     text-align: center;
@@ -35,29 +35,30 @@ h1 {
 }
 
 .try-again {
-    background-color: purple;
+    background-color: rgb(0, 0, 0);
     border-radius: 10px;
     width: 220px;
-    height: 40px;
+    height: 45px;
     font-size: 20px;
-    font-family: "Bitcount Grid Double", sans-serif;
+    font-family: Impact, sans-serif;
     color: thistle;
-    border-color: rgb(42, 6, 42); 
+    border-color: rgb(255, 255, 255); 
     cursor: pointer;
     margin-top: 20px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .try-again:hover {
-    background-color: rgb(128, 0, 128);
+    background-color: rgb(108, 30, 108);
     color: white;
     transform: translateY(-2px); 
 }
 
 .valid-input {
-    font-family: "Press Start 2P", cursive;
+    font-family: Impact, cursive;
     font-weight: 300;
     color: white;
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 40px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
