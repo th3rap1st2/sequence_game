@@ -8,15 +8,15 @@
 <body>
     <div class="results-container">
         <h1>Results</h1>
-        <p>Pieces: {{ pieces }}</p>
-        <p>Order: {{ order }}</p>
-        <p>Increasing Score: {{ inc_score }}</p>
-        <p>Decreasing Score: {{ dec_score }}</p>
-        <button id="play-again">Play Again</button>
+        <p id="pieces">Pieces: {{ pieces }}</p>
+        <p id="order">Order: {{ order }}</p>
+        <p id="inc_score">Increasing Score: {{ inc_score }}</p>
+        <p id="dec_score">Decreasing Score: {{ dec_score }}</p>
+        <button id="play">Play Again</button>
     </div>
 
     <script>
-        document.getElementById('play-again').addEventListener('click', () => {
+        document.getElementById('play').addEventListener('click', () => {
             window.location.href = '/'; // Redirect to the main page
         });
     </script>

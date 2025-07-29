@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 180px;
+} 
+
+body {
+    background-color: #a799cf;
+}
+
+h1 {
+    font-family: "Bitcount Grid Double", sans-serif;
+    font-weight: 550;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 70px;
+    margin-bottom: 20px;
+    text-shadow:
+    -1px -1px 0 rgb(42, 6, 42),
+     0   -1px 0 rgb(42, 6, 42),
+     1px -1px 0 rgb(42, 6, 42),
+     1px  0   0 rgb(42, 6, 42),
+     1px  1px 0 rgb(42, 6, 42),
+     0    1px 0 rgb(42, 6, 42),
+    -1px  1px 0 rgb(42, 6, 42),
+    -1px  0   0 rgb(42, 6, 42);
+}
+
+p {
+    font-family: "Press Start 2P", cursive;
+    font-weight: 300;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.play {
+    background-color: purple;
+    border-radius: 10px;
+    width: 220px;
+    height: 40px;
+    font-size: 20px;
+    font-family: "Bitcount Grid Double", sans-serif;
+    color: thistle;
+    border-color: rgb(42, 6, 42); 
+    cursor: pointer;
+    margin-bottom: 20px;
+}

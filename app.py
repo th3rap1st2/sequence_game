@@ -74,13 +74,13 @@ def check():
 
 
     if increasing_sequence(sequence):
-        result = "increasing"
+        result = "Increasing"
         inc_score += 1
     elif decreasing_sequence(sequence):
-        result = "decreasing"
+        result = "Decreasing"
         dec_score += 1
     else:
-        result = "neutral"
+        result = "Neutral"
 
     return render_template("results.html", 
         pieces=sequence,
