@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -50,11 +50,15 @@ def error():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', inc_score=inc_score)
 
 @app.route('/rules')
 def rules():
     return render_template('rules.html')
+
+@app.route('/congrats')
+def congrats():
+    return render_template('congrats.html')
 
 @app.route('/check', methods=['POST'])
 
@@ -86,6 +90,11 @@ def check():
     else:
         result = "Neutral"
 
+    if inc_score >= 5:
+        inc_score = 0
+        dec_score = 0
+        return redirect(url_for('congrats'))
+    
     return render_template("results.html", 
         pieces=sequence,
         order=result,
