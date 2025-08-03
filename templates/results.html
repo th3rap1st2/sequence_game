@@ -9,7 +9,7 @@
 <body>
     <div class="results-container">
         <h1>Results</h1>
-        <p id="pieces">Pieces: {{ pieces }}</p>
+        <p id="pieces">Pieces: {{ pieces | join(', ') }}</p>
         <p id="order">Order: {{ order }}</p>
         <p id="inc_score">Increasing Score: {{ inc_score }}</p>
         <p id="dec_score">Decreasing Score: {{ dec_score }}</p>
